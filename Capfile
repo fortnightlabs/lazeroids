@@ -28,7 +28,7 @@ end
 
 namespace :npm do
   task :install, :roles => :app do
-    run "cd #{release_path} && npm install ."
+    run "cd #{release_path} && /u/apps/.nodelocal/bin/npm install ."
   end
 end
 after "deploy:update_code", "npm:install"
