@@ -10,7 +10,6 @@ set :scm, :git
 set :user, "app"
 
 role :app, "lazeroids"
-set :use_sudo, false
 
 namespace :deploy do
   task :start, :roles => :app do
