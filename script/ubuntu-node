@@ -6,7 +6,7 @@
 # curl http://github.com/fortnightlabs/lazeroids/raw/master/script/ubuntu | bash -s lazeroids
 
 if [ -z $1 ]; then
-  echo "ubuntu - easy node.js ubuntu server set up"
+  echo "ubuntu-node - easy node.js ubuntu server set up"
   echo "Usage: $0 project-name"
   exit
 fi
@@ -60,7 +60,6 @@ cd ~
 mkdir ~/.nodelocal
 export PREFIX=~/.nodelocal
 echo 'export PATH=~/.nodelocal/bin:${PATH}' >> ~/.bashrc
-source .bashrc
 
 # install node latest
 NODE_URL="http://nodejs.org/dist/"
@@ -74,6 +73,7 @@ make && make install
 cd ~
 
 # install npm
+source ~/.bashrc
 curl http://npmjs.org/install.sh | sh
 
 exit # logout app
