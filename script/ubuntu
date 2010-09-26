@@ -3,6 +3,8 @@
 # http://increaseyourgeek.wordpress.com/2010/08/18/install-node-js-without-using-sudo/
 # http://fortnightlabs.posterous.com/
 
+# curl http://github.com/fortnightlabs/lazeroids/raw/master/script/ubuntu | bash -s lazeroids
+
 if [ -z $1 ]; then
   echo "ubuntu - easy node.js ubuntu server set up"
   echo "Usage: $0 project-name"
@@ -12,13 +14,14 @@ fi
 export NODE_PROCESS="$1"
 export AUTHORIZED_KEYS="$HOME/.ssh/authorized_keys"
 
-sudo su - # login root
+sudo -E bash # login root
 
 # install dependencies
 apt-get update -y
 apt-get install -y g++ curl libssl-dev apache2-utils
 
 # create the app user
+mkdir /u
 useradd -U -d /u/apps -s /bin/bash -m app
 
 # set-up ssh
