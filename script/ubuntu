@@ -18,7 +18,7 @@ sudo -E bash # login root
 
 # install dependencies
 apt-get update -y
-apt-get install -y g++ curl libssl-dev apache2-utils
+apt-get install -y g++ curl libssl-dev apache2-utils git-core
 
 # create the app user
 mkdir /u
@@ -39,7 +39,7 @@ start on startup
 stop on shutdown
 
 script
-  cd /u/apps/$NODE_PROCESS/current && exec sudo -u www-data EXPRESS_ENV=production PORT=80 /u/apps/.nodelocal/bin/node /u/apps/$NODE_PROCESS/current/server.js 2>&1 >> /u/apps/$NODE_PROCESS/current/log/node.log
+  cd /u/apps/$NODE_PROCESS/current && exec sudo EXPRESS_ENV=production PORT=80 /u/apps/.nodelocal/bin/node /u/apps/$NODE_PROCESS/current/server.js 2>&1 >> /u/apps/$NODE_PROCESS/current/log/node.log
 end script
 END
 
