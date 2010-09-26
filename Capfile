@@ -31,3 +31,14 @@ namespace :npm do
   end
 end
 after "deploy:update_code", "npm:install"
+
+namespace :with_sudo do
+  task :on do
+    set :use_sudo, true
+  end
+  task :off do
+    set :use_sudo, false
+  end
+end
+before "deploy:setup", "with_sudo:off"
+after "deploy:setup", "with_sudo:on"
