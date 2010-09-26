@@ -60,7 +60,7 @@ cd ~
 mkdir ~/.nodelocal
 export PREFIX=~/.nodelocal
 echo 'export PATH=~/.nodelocal/bin:${PATH}' >> ~/.bashrc
-. .bashrc
+source .bashrc
 
 # install node latest
 NODE_URL="http://nodejs.org/dist/"
