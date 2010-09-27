@@ -71,7 +71,8 @@ make && make install
 cd ~
 
 # install npm
-source ~/.bashrc
+export PATH=~/.nodelocal/bin:${PATH}
+hash -r
 curl http://npmjs.org/install.sh | sh
 
 exit # logout app
