@@ -8,7 +8,7 @@ export NODE_PROCESS="$1"
 
 script/ec2-ubuntu $NODE_PROCESS m1.small
 
-ssh $NODE_PROCESS "curl http://github.com/fortnightlabs/$NODE_PROCESS/raw/master/script/ubuntu-node | bash -s $NODE_PROCESS"
+ssh $NODE_PROCESS "curl http://github.com/fortnightlabs/${NODE_PROCESS}/raw/master/script/ubuntu-node | bash -s $NODE_PROCESS"
 
 cap deploy:setup
 cap deploy:update

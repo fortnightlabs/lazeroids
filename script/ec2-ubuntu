@@ -25,10 +25,10 @@ run 'instance=`ec2-run-instances '"$ami"' --instance-type '"$instancetype"' --re
 iid=`echo $instance | cut -d' ' -f2`
 status='pending'
 while [ $status != 'running' ]; do
+  sleep 3
   run 'description=`ec2-describe-instances --region '"$region"' '"$iid"' | grep INSTANCE`'
   status=`echo "$description" | cut -f6`
   echo "waiting for instance to boot (status: $status)..."
-  sleep 3
 done
 
 hostname=`echo "$description" | cut -f4`

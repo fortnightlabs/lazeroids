@@ -3,8 +3,6 @@
 # http://increaseyourgeek.wordpress.com/2010/08/18/install-node-js-without-using-sudo/
 # http://fortnightlabs.posterous.com/
 
-# curl http://github.com/fortnightlabs/lazeroids/raw/master/script/ubuntu | bash -s lazeroids
-
 if [ -z $1 ]; then
   echo "ubuntu-node - easy node.js ubuntu server set up"
   echo "Usage: $0 project-name"
