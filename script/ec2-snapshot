@@ -24,6 +24,7 @@ run sudo sed -i.dist s/universe/multiverse/ /etc/apt/sources.list
 echo
 
 echo "installing ec2 tools..."
+run sudo apt-get -y update
 run sudo apt-get -y install ec2-ami-tools
 run sudo apt-get -y install ec2-api-tools
 echo
