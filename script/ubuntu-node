@@ -55,9 +55,9 @@ sudo su app # login app
 cd ~
 
 # setup space for node
-mkdir ~/.nodelocal
-export PREFIX=~/.nodelocal
-echo 'export PATH=~/.nodelocal/bin:${PATH}' >> ~/.bashrc
+mkdir /u/apps/.nodelocal
+export PREFIX=/u/apps/.nodelocal
+echo 'export PATH=/u/apps/.nodelocal/bin:${PATH}' >> ~/.bashrc
 
 # install node latest
 NODE_URL="http://nodejs.org/dist/"
@@ -71,8 +71,6 @@ make && make install
 cd ~
 
 # install npm
-export PATH=~/.nodelocal/bin:${PATH}
-hash -r
-curl http://npmjs.org/install.sh | sh
+curl http://npmjs.org/install.sh | bash
 
 exit # logout app
